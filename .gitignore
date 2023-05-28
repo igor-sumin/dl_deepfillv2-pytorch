@@ -1,4 +1,5 @@
 # This repo
+.vscode
 *.pth
 tmp
 checkpoints/
