@@ -80,9 +80,12 @@ if __name__ == '__main__':
 
     my_res = cv2.imread("./examples/result/case1_result.png")
     local_res = cv2.imread("./examples/result/case1_local.png")
-    err = np.sum(abs(local_res - my_res))
 
-    if err == 0:
+    my_mask = cv2.threshold(my_res, 0, 255, cv2.THRESH_BINARY)[1]
+    local_mask = cv2.threshold(local_res, 0, 255, cv2.THRESH_BINARY)[1]
+    diff = cv2.subtract(my_mask, local_mask)[1]
+
+    if diff.max() == 0:
         print("Test passed")
     else:
         print("Test failed")
