@@ -1,6 +1,7 @@
-torch==1.6.0
-torchvision==0.7.0
 numpy==1.18.5
+torch
+torchvision
+opencv-python==4.3.0.38
 pillow==7.0.0
 tqdm==4.41.1
 scikit-image==0.16.2
